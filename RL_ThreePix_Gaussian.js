@@ -132,6 +132,8 @@ psychoJS.start({
   expName: expName,
   expInfo: expInfo,
   resources: [
+    { 'name': 'my_stimuli/Stim_Y.jpg', 'path': 'my_stimuli/Stim_Y.jpg' },
+    { 'name': 'my_stimuli/Stim_X.jpg', 'path': 'my_stimuli/Stim_X.jpg' },
     { 'name': 'my_stimuli/Stim_6.jpg', 'path': 'my_stimuli/Stim_6.jpg' },
     { 'name': 'my_stimuli/Stim_5.jpg', 'path': 'my_stimuli/Stim_5.jpg' },
     { 'name': 'my_stimuli/Stim_4.jpg', 'path': 'my_stimuli/Stim_4.jpg' },
@@ -140,8 +142,6 @@ psychoJS.start({
     { 'name': 'pair1_A', 'path': 'my_stimuli/Stim_1.jpg' },
     { 'name': 'my_stimuli/practice_tree_1.png', 'path': 'my_stimuli/practice_tree_1.png' },
     { 'name': 'my_stimuli/practice_tree_2.png', 'path': 'my_stimuli/practice_tree_2.png' },
-    { 'name': 'my_stimuli/Stim_Y.jpg', 'path': 'my_stimuli/Stim_Y.jpg' },
-    { 'name': 'my_stimuli/Stim_X.jpg', 'path': 'my_stimuli/Stim_X.jpg' },
     { 'name': 'cond_files/age_gender.xlsx', 'path': 'cond_files/age_gender.xlsx' },
     { 'name': 'cond_files/practice_questions_dec.xlsx', 'path': 'cond_files/practice_questions_dec.xlsx' },
     { 'name': 'my_stimuli/normal_tree.png', 'path': 'my_stimuli/normal_tree.png' },
