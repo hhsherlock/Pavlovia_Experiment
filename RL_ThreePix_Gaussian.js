@@ -225,6 +225,7 @@ var InstructionsContext1Clock;
 var key_resp_context1;
 var continue_context1;
 var instruction_context_fractal_l;
+var instruction_context_fractal_m;
 var instruction_context_fractal_r;
 var instr_context1;
 var instruction_background;
@@ -788,7 +789,7 @@ async function experimentInit() {
   practice_fractal_l = new visual.ImageStim({
     win: psychoJS.window,
     name: 'practice_fractal_l', units: undefined,
-    image: 'my_stimuli/Stim_5.jpg', mask: undefined,
+    image: 'practice_main_A', mask: undefined,
     ori: 0.0, pos: [(- 0.50), (- 0.15)], size: [0.325, 0.325],
     color: new util.Color([1, 1, 1]), opacity: undefined,
     flipHoriz: false, flipVert: false,
@@ -797,7 +798,7 @@ async function experimentInit() {
   practice_fractal_r = new visual.ImageStim({
     win: psychoJS.window,
     name: 'practice_fractal_r', units: undefined,
-    image: 'my_stimuli/Stim_6.jpg', mask: undefined,
+    image: 'practice_main_C', mask: undefined,
     ori: 0.0, pos: [0.0, (- 0.15)], size: [0.325, 0.325],
     color: new util.Color([1, 1, 1]), opacity: undefined,
     flipHoriz: false, flipVert: false,
@@ -806,7 +807,7 @@ async function experimentInit() {
   practice_fractal_m = new visual.ImageStim({
     win: psychoJS.window,
     name: 'practice_fractal_m', units: undefined,
-    image: 'my_stimuli/Stim_Y.jpg', mask: undefined,
+    image: 'practice_main_B', mask: undefined,
     ori: 0.0, pos: [0.50, (- 0.15)], size: [0.325, 0.325],
     color: new util.Color([1, 1, 1]), opacity: undefined,
     flipHoriz: false, flipVert: false,
@@ -881,8 +882,17 @@ async function experimentInit() {
     image: undefined, mask: undefined,
     ori: 0.0, pos: [0, 0], size: [0.45, 0.45],
     color: new util.Color([1, 1, 1]), opacity: undefined,
-    flipHoriz: false, flipVert: false,
+    flipHoriz: false, flipVert: false, wrapWidth: 1.0,
     texRes: 128.0, interpolate: false, depth: -3.0
+  });
+  instruction_context_fractal_m = new visual.ImageStim({
+    win: psychoJS.window,
+    name: 'instruction_context_fractal_m', units: undefined,
+    image: undefined, mask: undefined,
+    ori: 0.0, pos: [0, 0], size: [0.45, 0.45],
+    color: new util.Color([1, 1, 1]), opacity: undefined,
+    flipHoriz: false, flipVert: false, wrapWidth: 1.0,
+    texRes: 128.0, interpolate: false, depth: -4.0
   });
   instruction_context_fractal_r = new visual.ImageStim({
     win: psychoJS.window,
@@ -890,7 +900,7 @@ async function experimentInit() {
     image: undefined, mask: undefined,
     ori: 0.0, pos: [0, 0], size: [0.45, 0.45],
     color: new util.Color([1, 1, 1]), opacity: undefined,
-    flipHoriz: false, flipVert: false,
+    flipHoriz: false, flipVert: false, wrapWidth: 1.0,
     texRes: 128.0, interpolate: false, depth: -4.0
   });
 
@@ -2827,6 +2837,7 @@ function Instructions1RoutineBegin(snapshot) {
     Instructions1Components.push(continue_12);
     Instructions1Components.push(practice_fractal_l);
     Instructions1Components.push(practice_fractal_r);
+    Instructions1Components.push(practice_fractal_m);
 
     for (const thisComponent of Instructions1Components)
       if ('status' in thisComponent)
@@ -2905,6 +2916,15 @@ function Instructions1RoutineEachFrame() {
       practice_fractal_r.frameNStart = frameN;  // exact frame index
 
       practice_fractal_r.setAutoDraw(true);
+    }
+
+    // *practice_fractal_m* updates
+    if (t >= 0.0 && practice_fractal_m.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      practice_fractal_m.tStart = t;  // (not accounting for frame time here)
+      practice_fractal_m.frameNStart = frameN;  // exact frame index
+
+      practice_fractal_m.setAutoDraw(true);
     }
 
     // check for quit (typically the Esc key)
