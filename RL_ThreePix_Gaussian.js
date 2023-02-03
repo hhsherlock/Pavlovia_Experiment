@@ -7070,8 +7070,8 @@ function block_primer_1RoutineBegin(snapshot) {
       primer_txt = "The experiment will now begin. You will make choices between these shapes.";
       fractal_ta = 'pair1_A';
       fractal_tb = 'pair1_B';
-      fractal_ma = 'my_stimuli/Stim_3.jpg';
-      fractal_mb = 'my_stimuli/Stim_4.jpg';
+      fractal_ma = 'pair1_C';
+      fractal_mb = 'pair2_D';
     } else {
       if ((blocks_run === 1)) {
         primer_txt = "The experiment will now continue. You will continue to make choices between these shapes.";
