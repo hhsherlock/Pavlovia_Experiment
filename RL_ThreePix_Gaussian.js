@@ -136,8 +136,8 @@ psychoJS.start({
     { 'name': 'my_stimuli/Stim_5.jpg', 'path': 'my_stimuli/Stim_5.jpg' },
     { 'name': 'my_stimuli/Stim_4.jpg', 'path': 'my_stimuli/Stim_4.jpg' },
     { 'name': 'my_stimuli/Stim_3.jpg', 'path': 'my_stimuli/Stim_3.jpg' },
-    { 'name': 'my_stimuli/Stim_2.jpg', 'path': 'my_stimuli/Stim_2.jpg' },
-    { 'name': 'my_stimuli/Stim_1.jpg', 'path': 'my_stimuli/Stim_1.jpg' },
+    { 'name': 'pair1_B', 'path': 'my_stimuli/Stim_2.jpg' },
+    { 'name': 'pair1_A', 'path': 'my_stimuli/Stim_1.jpg' },
     { 'name': 'my_stimuli/practice_tree_1.png', 'path': 'my_stimuli/practice_tree_1.png' },
     { 'name': 'my_stimuli/practice_tree_2.png', 'path': 'my_stimuli/practice_tree_2.png' },
     { 'name': 'my_stimuli/Stim_Y.jpg', 'path': 'my_stimuli/Stim_Y.jpg' },
@@ -205,6 +205,7 @@ var key_resp_9;
 var continue_12;
 var practice_fractal_l;
 var practice_fractal_r;
+var practice_fractal_m;
 
 // context
 var practice_color_code_1;
@@ -784,7 +785,7 @@ async function experimentInit() {
     win: psychoJS.window,
     name: 'practice_fractal_l', units: undefined,
     image: 'my_stimuli/Stim_5.jpg', mask: undefined,
-    ori: 0.0, pos: [(- 0.25), (- 0.20)], size: [0.325, 0.325],
+    ori: 0.0, pos: [(- 0.50), (- 0.15)], size: [0.325, 0.325],
     color: new util.Color([1, 1, 1]), opacity: undefined,
     flipHoriz: false, flipVert: false,
     texRes: 128.0, interpolate: false, depth: -3.0
@@ -793,11 +794,21 @@ async function experimentInit() {
     win: psychoJS.window,
     name: 'practice_fractal_r', units: undefined,
     image: 'my_stimuli/Stim_6.jpg', mask: undefined,
-    ori: 0.0, pos: [0.275, (- 0.20)], size: [0.325, 0.325],
+    ori: 0.0, pos: [0.0, (- 0.15)], size: [0.325, 0.325],
     color: new util.Color([1, 1, 1]), opacity: undefined,
     flipHoriz: false, flipVert: false,
     texRes: 128.0, interpolate: false, depth: -4.0
   });
+  practice_fractal_m = new visual.ImageStim({
+    win: psychoJS.window,
+    name: 'practice_fractal_m', units: undefined,
+    image: 'my_stimuli/Stim_Y.jpg', mask: undefined,
+    ori: 0.0, pos: [0.50, (- 0.15)], size: [0.325, 0.325],
+    color: new util.Color([1, 1, 1]), opacity: undefined,
+    flipHoriz: false, flipVert: false,
+    texRes: 128.0, interpolate: false, depth: -4.0
+  });
+
   // Initialize components for Routine "Context0 Instruction"
   InstructionsContext0Clock = new util.Clock();
   instr_context0 = new visual.TextStim({
@@ -7053,8 +7064,8 @@ function block_primer_1RoutineBegin(snapshot) {
     // update component parameters for each repeat
     if ((blocks_run === 0)) {
       primer_txt = "The experiment will now begin. You will make choices between these shapes.";
-      fractal_ta = 'my_stimuli/Stim_1.jpg';
-      fractal_tb = 'my_stimuli/Stim_2.jpg';
+      fractal_ta = 'pair1_A';
+      fractal_tb = 'pair1_B';
       fractal_ma = 'my_stimuli/Stim_3.jpg';
       fractal_mb = 'my_stimuli/Stim_4.jpg';
     } else {
