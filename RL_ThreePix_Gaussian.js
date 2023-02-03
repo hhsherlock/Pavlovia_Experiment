@@ -214,7 +214,7 @@ var key_resp_context0;
 var continue_context0;
 var instr_context0;
 var instr_context0_only;
-var test1 = '\nPlease also note the changes of the background elements, which include the backgournd color and the tree images at the four corners.\n\nBackground contexts are         associated with which pair of shapes is being presented. Here are two example pairs in the next two slides.';
+var test1 = '\nPlease also note the changes of the background elements, which include the backgournd color and the tree images at the four corners.\n\nBackground contexts are         associated with which combination of shapes is being presented. Here are two example combinations in the next two slides.';
 var test2 = '\n\n\n                       only';
 var InstructionsContext1Clock;
 var key_resp_context1;
@@ -759,7 +759,7 @@ async function experimentInit() {
   intro_4 = new visual.TextStim({
     win: psychoJS.window,
     name: 'intro_4',
-    text: '\nIn the main task, you’ll complete a series of "trials". On each so-called trial, you’ll be shown a pair of shapes, and will be asked to choose one of them. You will see different pairs of shapes throughout the experiment, making choices between different pairs on different trials. Here’s one example of a shape pair:\n',
+    text: '\nIn the main task, you’ll complete a series of "trials". On each so-called trial, you’ll be shown three shapes, and will be asked to choose one of them. You will see different combinations of shapes throughout the experiment, making choices among different combinations on different trials. Here’s one example of a shape combination:\n',
     font: font_style,
     units: undefined,
     pos: [0, 0.225], height: 1.0, wrapWidth: undefined, ori: 0.0,
@@ -839,7 +839,7 @@ async function experimentInit() {
   instr_context1 = new visual.TextStim({
     win: psychoJS.window,
     name: 'instr_context1',
-    text: 'First Pair',
+    text: 'First Combination',
     font: font_style,
     units: undefined,
     pos: [0, 0.4125], height: 0.075, wrapWidth: undefined, ori: 0.0,
@@ -931,7 +931,7 @@ async function experimentInit() {
   instr_context2 = new visual.TextStim({
     win: psychoJS.window,
     name: 'instr_context2',
-    text: 'Second Pair',
+    text: 'Second Combination',
     font: font_style,
     units: undefined,
     pos: [0, 0.4125], height: 0.075, wrapWidth: 1.0, ori: 0.0,
@@ -1048,7 +1048,7 @@ async function experimentInit() {
     flipHoriz: false, flipVert: false,
     texRes: 128.0, interpolate: false, depth: -5.0
   });
-  instr_4_text = "For example, this participant chose the left shape, resulting in a win of 0.1\u20ac. Had they chosen the right shape, they would have won nothing.";
+  instr_4_text = "For example, this participant chose the left shape, resulting in a win of 0.1\u20ac. Had they chosen the other two shapes, they would have won nothing.";
   practice_left_feed_text = "+0.1\u20ac";
   practice_right_feed_text = " ";
 
@@ -1151,7 +1151,7 @@ async function experimentInit() {
   intro_7 = new visual.TextStim({
     win: psychoJS.window,
     name: 'intro_7',
-    text: 'You will complete many trials with each pair of shapes. That is, you will choose between the same shapes many times. All shapes will sometimes lead to wins and sometimes lead to nothing. However, some shapes are better than others on average. You must learn which shapes to choose – and which to avoid - through trial and error.',
+    text: 'You will complete many trials with each combination of shapes. That is, you will choose among the same shapes many times. All shapes will sometimes lead to wins and sometimes lead to nothing. However, some shapes are better than others on average. You must learn which shapes to choose – and which to avoid - through trial and error.',
     font: font_style,
     units: undefined,
     pos: [0, 0], height: 1.0, wrapWidth: undefined, ori: 0.0,
