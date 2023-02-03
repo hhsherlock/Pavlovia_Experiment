@@ -132,20 +132,24 @@ psychoJS.start({
   expName: expName,
   expInfo: expInfo,
   resources: [
-    { 'name': 'my_stimuli/Stim_Y.jpg', 'path': 'my_stimuli/Stim_Y.jpg' },
-    { 'name': 'my_stimuli/Stim_X.jpg', 'path': 'my_stimuli/Stim_X.jpg' },
-    { 'name': 'my_stimuli/Stim_6.jpg', 'path': 'my_stimuli/Stim_6.jpg' },
-    { 'name': 'my_stimuli/Stim_5.jpg', 'path': 'my_stimuli/Stim_5.jpg' },
-    { 'name': 'my_stimuli/Stim_4.jpg', 'path': 'my_stimuli/Stim_4.jpg' },
-    { 'name': 'my_stimuli/Stim_3.jpg', 'path': 'my_stimuli/Stim_3.jpg' },
+    { 'name': 'practice_once_F', 'path': 'my_stimuli/Stim_6.jpg' },
+    { 'name': 'practice_once_E', 'path': 'my_stimuli/Stim_5.jpg' },
+    { 'name': 'practice_once_D', 'path': 'my_stimuli/Stim_4.jpg' },
+    { 'name': 'practice_main_C', 'path': 'my_stimuli/Stim_3.jpg' },
+    { 'name': 'practice_main_B', 'path': 'my_stimuli/Stim_Y.jpg' },
+    { 'name': 'practice_main_A', 'path': 'my_stimuli/Stim_X.jpg' },
+    { 'name': 'pair2_F', 'path': 'my_stimuli/Stim_6.jpg' },
+    { 'name': 'pair2_E', 'path': 'my_stimuli/Stim_5.jpg' },
+    { 'name': 'pair2_D', 'path': 'my_stimuli/Stim_4.jpg' },
+    { 'name': 'pair1_C', 'path': 'my_stimuli/Stim_3.jpg' },
     { 'name': 'pair1_B', 'path': 'my_stimuli/Stim_2.jpg' },
     { 'name': 'pair1_A', 'path': 'my_stimuli/Stim_1.jpg' },
     { 'name': 'my_stimuli/practice_tree_1.png', 'path': 'my_stimuli/practice_tree_1.png' },
     { 'name': 'my_stimuli/practice_tree_2.png', 'path': 'my_stimuli/practice_tree_2.png' },
-    { 'name': 'cond_files/age_gender.xlsx', 'path': 'cond_files/age_gender.xlsx' },
-    { 'name': 'cond_files/practice_questions_dec.xlsx', 'path': 'cond_files/practice_questions_dec.xlsx' },
     { 'name': 'my_stimuli/normal_tree.png', 'path': 'my_stimuli/normal_tree.png' },
-    { 'name': 'my_stimuli/palm_tree.png', 'path': 'my_stimuli/palm_tree.png' }
+    { 'name': 'my_stimuli/palm_tree.png', 'path': 'my_stimuli/palm_tree.png' },
+    { 'name': 'cond_files/age_gender.xlsx', 'path': 'cond_files/age_gender.xlsx' },
+    { 'name': 'cond_files/practice_questions_dec.xlsx', 'path': 'cond_files/practice_questions_dec.xlsx' }
   ]
 });
 
