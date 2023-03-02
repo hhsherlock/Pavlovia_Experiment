@@ -568,7 +568,7 @@ async function experimentInit() {
     transfer_sequence = [1, 0, 1, 0, 2, 2, 2];
 
     // sequence = learning_sequence.concat(transfer_sequence);
-    sequence = transfer_sequence.concat(learning_sequence);
+    sequence = learning_sequence.concat(transfer_sequence);
     // // diaplay the array
     console.log(learning_sequence);
     console.log(transfer_sequence);
