@@ -6685,8 +6685,8 @@ function practice_question_2RoutineBegin(snapshot) {
         continueRoutine = true; // until we're told otherwise
         routineTimer.add(120.000000);
         // update component parameters for each repeat
-        poly_false_dec.setPos([(- 0.45), pf_y]);
-        poly_true_dec.setPos([(- 0.45), pt_y]);
+        poly_false_dec.setPos([window_size(psychoJS.window.size) * (-0.75), pf_y]);
+        poly_true_dec.setPos([window_size(psychoJS.window.size) * (-0.75), pt_y]);
         Question.setText(question);
         Question.setHeight(instruct_height);
         answer_true.setPos([at_x, at_y]);
