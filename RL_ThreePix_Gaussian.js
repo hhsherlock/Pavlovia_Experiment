@@ -1060,7 +1060,7 @@ async function experimentInit() {
         flipHoriz: false, flipVert: false,
         texRes: 128.0, interpolate: false, depth: -5.0
     });
-    instr_4_text = "For example, this participant chose the left shape, resulting in gaining 50 points. Had they chosen the other two shapes, they would have won nothing.";
+    instr_4_text = "For example, this participant chose the left shape, resulting in gaining 50 points.";
     practice_left_feed_text = "+50";
     practice_right_feed_text = " ";
 
@@ -1275,7 +1275,7 @@ async function experimentInit() {
     bgp_practice_rt = new visual.ImageStim({
         win: psychoJS.window,
         name: 'bgp_practice_rt', units: 'height',
-        image: 'my_stimuli/practice_tree_2.png', mask: undefined,
+        image: 'my_stimuli/practice_tree_1.png', mask: undefined,
         ori: 0.0, pos: [0, 0], size: [0.20, 0.25],
         color: new util.Color('lightblue'), opacity: undefined,
         flipHoriz: false, flipVert: false,
@@ -1284,7 +1284,7 @@ async function experimentInit() {
     bgp_practice_lt = new visual.ImageStim({
         win: psychoJS.window,
         name: 'bgp_practice_lt', units: 'height',
-        image: 'my_stimuli/practice_tree_2.png', mask: undefined,
+        image: 'my_stimuli/practice_tree_1.png', mask: undefined,
         ori: 0.0, pos: [0, 0], size: [0.20, 0.25],
         color: new util.Color([1, 1, 1]), opacity: undefined,
         flipHoriz: false, flipVert: false,
@@ -1293,7 +1293,7 @@ async function experimentInit() {
     bgp_practice_rd = new visual.ImageStim({
         win: psychoJS.window,
         name: 'bgp_practice_rd', units: 'height',
-        image: 'my_stimuli/practice_tree_2.png', mask: undefined,
+        image: 'my_stimuli/practice_tree_1.png', mask: undefined,
         ori: 0.0, pos: [0, 0], size: [0.20, 0.25],
         color: new util.Color([1, 1, 1]), opacity: undefined,
         flipHoriz: false, flipVert: false,
@@ -1302,7 +1302,7 @@ async function experimentInit() {
     bgp_practice_ld = new visual.ImageStim({
         win: psychoJS.window,
         name: 'bgp_practice_ld', units: 'height',
-        image: 'my_stimuli/practice_tree_2.png', mask: undefined,
+        image: 'my_stimuli/practice_tree_1.png', mask: undefined,
         ori: 0.0, pos: [0, 0], size: [0.20, 0.25],
         color: new util.Color([1, 1, 1]), opacity: undefined,
         flipHoriz: false, flipVert: false,
@@ -3725,7 +3725,7 @@ function Instructions2RoutineBegin(snapshot) {
         instruction_context_fractal_m.setSize([fractal_size, fractal_size]);
         instruction_context_fractal_r.setSize([fractal_size, fractal_size]);
 
-        instr_3.setText('You can choose a shape by clicking on it. Choices must be made quickly - within 2.5 seconds of the trial starting. After clicking on a shape, you will see the outcome of your choice: you will win various amount of money.');
+        instr_3.setText('You can choose a shape by clicking on it. Choices must be made quickly - within 2.5 seconds of the trial starting. After clicking on a shape, you will see the outcome of your choice: you will win various amount of points.');
         instr_3.setHeight(instruct_height);
         key_resp_10.keys = undefined;
         key_resp_10.rt = undefined;
