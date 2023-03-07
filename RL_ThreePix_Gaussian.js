@@ -541,8 +541,8 @@ async function experimentInit() {
     // --------------------(: this part is changable :)--------------------
 
     // total trial number
-    learning_trial_num = 4;
-    transfer_trial_num = 7;
+    learning_trial_num = 60;
+    transfer_trial_num = 30;
 
 
     // same amount of pairs in n trials
@@ -565,6 +565,8 @@ async function experimentInit() {
         learning_sequence = learning_sequence.concat(temp);
     }
 
+
+    
     transfer_sequence = [1, 0, 1, 0, 2, 2, 2];
 
     // sequence = learning_sequence.concat(transfer_sequence);
@@ -1091,7 +1093,7 @@ async function experimentInit() {
     intro_5 = new visual.TextStim({
         win: psychoJS.window,
         name: 'intro_5',
-        text: 'All outcomes correspond to real money! At the end of the experiment, you will be given a payment corresponding to your total points during the task.',
+        text: 'All outcomes correspond to real money! At the end of the experiment, you will be given a payment corresponding to your total points during the task. For every 100 points you receive 10 cents.',
         font: font_style,
         units: undefined,
         pos: [0, 0], height: 1.0, wrapWidth: undefined, ori: 0.0,
