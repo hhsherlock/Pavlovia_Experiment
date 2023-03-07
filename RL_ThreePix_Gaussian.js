@@ -18,20 +18,20 @@ let expInfo = { 'Enter your ProlificID': '' };
 // Start code blocks for 'Before Experiment'
 // init psychoJS:
 const psychoJS = new PsychoJS({
-  debug: true
+    debug: true
 });
 
 // open window:
 psychoJS.openWindow({
-  fullscr: true,
-  color: new util.Color([1, 1, 1]),
-  units: 'height',
-  waitBlanking: true
+    fullscr: true,
+    color: new util.Color([1, 1, 1]),
+    units: 'height',
+    waitBlanking: true
 });
 // schedule the experiment:
 psychoJS.schedule(psychoJS.gui.DlgFromDict({
-  dictionary: expInfo,
-  title: expName
+    dictionary: expInfo,
+    title: expName
 }));
 
 const flowScheduler = new Scheduler(psychoJS);
@@ -129,28 +129,28 @@ flowScheduler.add(quitPsychoJS, '', true);
 dialogCancelScheduler.add(quitPsychoJS, '', false);
 
 psychoJS.start({
-  expName: expName,
-  expInfo: expInfo,
-  resources: [
-    { 'name': 'practice_once_F', 'path': 'my_stimuli/Stim_6.jpg' },
-    { 'name': 'practice_once_E', 'path': 'my_stimuli/Stim_5.jpg' },
-    { 'name': 'practice_once_D', 'path': 'my_stimuli/Stim_4.jpg' },
-    { 'name': 'practice_main_C', 'path': 'my_stimuli/Stim_3.jpg' },
-    { 'name': 'practice_main_B', 'path': 'my_stimuli/Stim_Y.jpg' },
-    { 'name': 'practice_main_A', 'path': 'my_stimuli/Stim_X.jpg' },
-    { 'name': 'pair2_F', 'path': 'my_stimuli/Stim_6.jpg' },
-    { 'name': 'pair2_E', 'path': 'my_stimuli/Stim_5.jpg' },
-    { 'name': 'pair2_D', 'path': 'my_stimuli/Stim_4.jpg' },
-    { 'name': 'pair1_C', 'path': 'my_stimuli/Stim_3.jpg' },
-    { 'name': 'pair1_B', 'path': 'my_stimuli/Stim_2.jpg' },
-    { 'name': 'pair1_A', 'path': 'my_stimuli/Stim_1.jpg' },
-    { 'name': 'my_stimuli/practice_tree_1.png', 'path': 'my_stimuli/practice_tree_1.png' },
-    { 'name': 'my_stimuli/practice_tree_2.png', 'path': 'my_stimuli/practice_tree_2.png' },
-    { 'name': 'my_stimuli/normal_tree.png', 'path': 'my_stimuli/normal_tree.png' },
-    { 'name': 'my_stimuli/palm_tree.png', 'path': 'my_stimuli/palm_tree.png' },
-    { 'name': 'cond_files/age_gender.xlsx', 'path': 'cond_files/age_gender.xlsx' },
-    { 'name': 'cond_files/practice_questions_dec.xlsx', 'path': 'cond_files/practice_questions_dec.xlsx' }
-  ]
+    expName: expName,
+    expInfo: expInfo,
+    resources: [
+        { 'name': 'practice_once_F', 'path': 'my_stimuli/Stim_6.jpg' },
+        { 'name': 'practice_once_E', 'path': 'my_stimuli/Stim_5.jpg' },
+        { 'name': 'practice_once_D', 'path': 'my_stimuli/Stim_4.jpg' },
+        { 'name': 'practice_main_C', 'path': 'my_stimuli/Stim_3.jpg' },
+        { 'name': 'practice_main_B', 'path': 'my_stimuli/Stim_Y.jpg' },
+        { 'name': 'practice_main_A', 'path': 'my_stimuli/Stim_X.jpg' },
+        { 'name': 'pair2_F', 'path': 'my_stimuli/Stim_6.jpg' },
+        { 'name': 'pair2_E', 'path': 'my_stimuli/Stim_5.jpg' },
+        { 'name': 'pair2_D', 'path': 'my_stimuli/Stim_4.jpg' },
+        { 'name': 'pair1_C', 'path': 'my_stimuli/Stim_3.jpg' },
+        { 'name': 'pair1_B', 'path': 'my_stimuli/Stim_2.jpg' },
+        { 'name': 'pair1_A', 'path': 'my_stimuli/Stim_1.jpg' },
+        { 'name': 'my_stimuli/practice_tree_1.png', 'path': 'my_stimuli/practice_tree_1.png' },
+        { 'name': 'my_stimuli/practice_tree_2.png', 'path': 'my_stimuli/practice_tree_2.png' },
+        { 'name': 'my_stimuli/normal_tree.png', 'path': 'my_stimuli/normal_tree.png' },
+        { 'name': 'my_stimuli/palm_tree.png', 'path': 'my_stimuli/palm_tree.png' },
+        { 'name': 'cond_files/age_gender.xlsx', 'path': 'cond_files/age_gender.xlsx' },
+        { 'name': 'cond_files/practice_questions_dec.xlsx', 'path': 'cond_files/practice_questions_dec.xlsx' }
+    ]
 });
 
 psychoJS.experimentLogger.setLevel(core.Logger.ServerLevel.EXP);
@@ -158,23 +158,23 @@ psychoJS.experimentLogger.setLevel(core.Logger.ServerLevel.EXP);
 
 var frameDur;
 async function updateInfo() {
-  expInfo['date'] = util.MonotonicClock.getDateStr();  // add a simple timestamp
-  expInfo['expName'] = expName;
-  expInfo['psychopyVersion'] = '2021.2.3';
-  expInfo['OS'] = window.navigator.platform;
+    expInfo['date'] = util.MonotonicClock.getDateStr();  // add a simple timestamp
+    expInfo['expName'] = expName;
+    expInfo['psychopyVersion'] = '2021.2.3';
+    expInfo['OS'] = window.navigator.platform;
 
-  // store frame rate of monitor if we can measure it successfully
-  expInfo['frameRate'] = psychoJS.window.getActualFrameRate();
-  if (typeof expInfo['frameRate'] !== 'undefined')
-    frameDur = 1.0 / Math.round(expInfo['frameRate']);
-  else
-    frameDur = 1.0 / 60.0; // couldn't get a reliable measure so guess
+    // store frame rate of monitor if we can measure it successfully
+    expInfo['frameRate'] = psychoJS.window.getActualFrameRate();
+    if (typeof expInfo['frameRate'] !== 'undefined')
+        frameDur = 1.0 / Math.round(expInfo['frameRate']);
+    else
+        frameDur = 1.0 / 60.0; // couldn't get a reliable measure so guess
 
-  // add info from the URL:
-  util.addInfoFromUrl(expInfo);
-  psychoJS.setRedirectUrls('https://app.prolific.co/submissions/complete?cc=75F6800A', '');
+    // add info from the URL:
+    util.addInfoFromUrl(expInfo);
+    psychoJS.setRedirectUrls('https://app.prolific.co/submissions/complete?cc=75F6800A', '');
 
-  return Scheduler.Event.NEXT;
+    return Scheduler.Event.NEXT;
 }
 
 const font_style = 'Arial'
@@ -324,6 +324,7 @@ var outcome_amount_a_2;
 var outcome_amount_b_2;
 var outcome_amount_c_2;
 var slow_dec_messageClock;
+var was_last_time_slow;
 var text_5;
 var ITI_2Clock;
 var polygon;
@@ -532,6 +533,7 @@ function gaussianRandom(mean = 0, stdev = 1) {
 }
 
 async function experimentInit() {
+    was_last_time_slow = false;
     practice_color_code_1 = [0.92157, 0.50980, 0.02745];
     practice_color_code_2 = [0.79216, 0.34510, 0.66667];
     trial_index = 0;
@@ -553,10 +555,10 @@ async function experimentInit() {
 
 
     // check whether the possibilities and trial numbers match (integer)
-    if (Number.isInteger(learning_trial_num / learning_pair_sub_num) == false||
-        Number.isInteger(learning_pair_sub_num/2) == false||
-        Number.isInteger(transfer_trial_num/transfer_pair_sub_num) == false||
-        Number.isInteger(transfer_pair_sub_num/3) == false) {
+    if (Number.isInteger(learning_trial_num / learning_pair_sub_num) == false ||
+        Number.isInteger(learning_pair_sub_num / 2) == false ||
+        Number.isInteger(transfer_trial_num / transfer_pair_sub_num) == false ||
+        Number.isInteger(transfer_pair_sub_num / 3) == false) {
         console.log("This is not an integer.");
         return quitPsychoJS('Wrong combination of the trial number and possibility . Goodbye!', false);
     }
@@ -569,10 +571,10 @@ async function experimentInit() {
         learning_sequence = learning_sequence.concat(temp);
     }
 
-    for (let i = 0; i < transfer_trial_num / transfer_pair_sub_num; i++){
+    for (let i = 0; i < transfer_trial_num / transfer_pair_sub_num; i++) {
         let temp = [];
-        temp = createArray(0.5, transfer_pair_sub_num/3);
-        temp = temp.concat(new Array(2*transfer_pair_sub_num/3).fill(2));
+        temp = createArray(0.5, transfer_pair_sub_num / 3);
+        temp = temp.concat(new Array(2 * transfer_pair_sub_num / 3).fill(2));
         shuffleArray(temp);
         transfer_sequence = transfer_sequence.concat(temp);
     }
@@ -6295,6 +6297,7 @@ function slow_dec_messageRoutineBegin(snapshot) {
         TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
 
         //------Prepare to start Routine 'slow_dec_message'-------
+        was_last_time_slow = true;
         t = 0;
         slow_dec_messageClock.reset(); // clock
         frameN = -1;
@@ -7948,8 +7951,16 @@ function decisionRoutineBegin(snapshot) {
                 fractalA = fractal_tc;
                 fractalB = fractal_mb;
             } else {
-                fractalA = first_combination[Math.floor(Math.random() * first_combination.length)];
-                fractalB = second_combination[Math.floor(Math.random() * second_combination.length)];
+                if (was_last_time_slow == false) {
+                    fractalA = first_combination[Math.floor(Math.random() * first_combination.length)];
+                    fractalB = second_combination[Math.floor(Math.random() * second_combination.length)];
+                    last_time_fractal_A = fractalA;
+                    last_time_fractal_B = fractalB;
+                } else {
+                    fractalA = last_time_fractal_A;
+                    fractalB = last_time_fractal_B;
+                    was_last_time_slow = false;
+                }
             }
             fractal_pos, fractal_size = size_adjustment_two(psychoJS.window.size)
             var r_fractal_position = Math.random();
@@ -9509,7 +9520,7 @@ function payment_screenRoutineBegin(snapshot) {
         frameN = -1;
         continueRoutine = true; // until we're told otherwise
         // update component parameters for each repeat
-        earn_str = Math.round(earnings/1000).toString();
+        earn_str = Math.round(earnings / 1000).toString();
         total_str = Math.round((earnings + 7), 3).toString();
         payment_code = (earnings * 52).toString();
         finish_txt = (("That's the end of the experiment! You won an additional " + earn_str) + " euros in the experiment. \n\n Please click the -ok- button on the next page to be redirected to Prolific. Your participation will be confirmed within the next days. Thank you very much for participating in this study and contributing to science.");
