@@ -546,13 +546,17 @@ async function experimentInit() {
 
 
     // same amount of pairs in n trials
-    learning_pair_sub_num = 2;
+    learning_pair_sub_num = 6;
+    transfer_pair_sub_num = 6;
 
     // --------------------(: this part is changable :)--------------------
 
 
     // check whether the possibilities and trial numbers match (integer)
-    if (Number.isInteger(learning_trial_num / learning_pair_sub_num) == false) {
+    if (Number.isInteger(learning_trial_num / learning_pair_sub_num) == false||
+        Number.isInteger(learning_pair_sub_num/2) == false||
+        Number.isInteger(transfer_trial_num/transfer_pair_sub_num) == false||
+        Number.isInteger(transfer_pair_sub_num/3) == false) {
         console.log("This is not an integer.");
         return quitPsychoJS('Wrong combination of the trial number and possibility . Goodbye!', false);
     }
@@ -565,9 +569,14 @@ async function experimentInit() {
         learning_sequence = learning_sequence.concat(temp);
     }
 
+    for (let i = 0; i < transfer_trial_num / transfer_pair_sub_num; i++){
+        let temp = [];
+        temp = createArray(0.5, transfer_pair_sub_num/3);
+        temp = temp.concat(new Array(2*transfer_pair_sub_num/3).fill(2));
+        shuffleArray(temp);
+        transfer_sequence = transfer_sequence.concat(temp);
+    }
 
-    
-    transfer_sequence = [1, 0, 1, 0, 2, 2, 2];
 
     // sequence = learning_sequence.concat(transfer_sequence);
     sequence = learning_sequence.concat(transfer_sequence);
@@ -9500,7 +9509,7 @@ function payment_screenRoutineBegin(snapshot) {
         frameN = -1;
         continueRoutine = true; // until we're told otherwise
         // update component parameters for each repeat
-        earn_str = Math.round(earnings, 3).toString();
+        earn_str = Math.round(earnings/1000).toString();
         total_str = Math.round((earnings + 7), 3).toString();
         payment_code = (earnings * 52).toString();
         finish_txt = (("That's the end of the experiment! You won an additional " + earn_str) + " euros in the experiment. \n\n Please click the -ok- button on the next page to be redirected to Prolific. Your participation will be confirmed within the next days. Thank you very much for participating in this study and contributing to science.");
