@@ -324,7 +324,6 @@ var outcome_amount_a_2;
 var outcome_amount_b_2;
 var outcome_amount_c_2;
 var slow_dec_messageClock;
-var was_last_time_slow;
 var text_5;
 var ITI_2Clock;
 var polygon;
@@ -440,14 +439,14 @@ var transfer_array_3 = [];
 var transfer_array_4 = [];
 var learning_sequence = [];
 var transfer_sequence = [];
+var transfer_random_sequence = [];
 var array_1 = [];
 var array_2 = [];
 var array_3 = [];
 var array_4 = [];
 var sequence = [];
 var trial_index;
-var first_pair_index;
-var second_pair_index;
+var transfer_random_index;
 var stim_1_p;
 var stim_2_p;
 var stim_3_p;
@@ -533,12 +532,9 @@ function gaussianRandom(mean = 0, stdev = 1) {
 }
 
 async function experimentInit() {
-    was_last_time_slow = false;
     practice_color_code_1 = [0.92157, 0.50980, 0.02745];
     practice_color_code_2 = [0.79216, 0.34510, 0.66667];
     trial_index = 0;
-    first_pair_index = 0;
-    second_pair_index = 0;
 
     // --------------------(: this part is changable :)--------------------
 
@@ -579,12 +575,16 @@ async function experimentInit() {
         transfer_sequence = transfer_sequence.concat(temp);
     }
 
+    for (let i = 0; i < 2*transfer_trial_num/3; i++){
+        transfer_random_sequence = transfer_random_sequence.concat([Math.floor(Math.random()*3) + 1, Math.floor(Math.random()*3) + 4]);
+    }
 
     // sequence = learning_sequence.concat(transfer_sequence);
     sequence = learning_sequence.concat(transfer_sequence);
     // // diaplay the array
     console.log(learning_sequence);
     console.log(transfer_sequence);
+    console.log(transfer_random_sequence);
     console.log(sequence);
 
 
@@ -6297,7 +6297,6 @@ function slow_dec_messageRoutineBegin(snapshot) {
         TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
 
         //------Prepare to start Routine 'slow_dec_message'-------
-        was_last_time_slow = true;
         t = 0;
         slow_dec_messageClock.reset(); // clock
         frameN = -1;
@@ -7868,8 +7867,6 @@ var decisionComponents;
 var fractalA;
 var fractalB;
 var fractalC;
-var last_time_fractal_A;
-var last_time_fractal_B;
 function decisionRoutineBegin(snapshot) {
     return async function () {
         TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
@@ -7889,7 +7886,6 @@ function decisionRoutineBegin(snapshot) {
 
         // learning phase with three fractals
         if (blocks_run === 0) {
-            console.log(was_last_time_slow);
             fa_click = 0;
             fb_click = 0;
             fc_click = 0;
@@ -7945,7 +7941,6 @@ function decisionRoutineBegin(snapshot) {
             fractal_c_dec.setImage(fractalC);
             fractal_c_dec.setSize([fractal_size, fractal_size]);
         } else if (blocks_run === 1) {
-            console.log(was_last_time_slow);
             fa_click = 0;
             fb_click = 0;
             if (sequence[trial_index] === 1) {
@@ -7955,16 +7950,27 @@ function decisionRoutineBegin(snapshot) {
                 fractalA = fractal_tc;
                 fractalB = fractal_mb;
             } else {
-                if (was_last_time_slow == false) {
-                    fractalA = first_combination[Math.floor(Math.random() * first_combination.length)];
-                    fractalB = second_combination[Math.floor(Math.random() * second_combination.length)];
-                    last_time_fractal_A = fractalA;
-                    last_time_fractal_B = fractalB;
-                } else {
-                    fractalA = last_time_fractal_A;
-                    fractalB = last_time_fractal_B;
-                    was_last_time_slow = false;
+                if(transfer_random_sequence[transfer_random_index] == 1){
+                    fractalA = fractal_ta;
+                    transfer_random_index = transfer_random_index + 1;
+                } else if (transfer_random_sequence[transfer_random_index] == 2){
+                    fractalA = fractal_tb;
+                    transfer_random_index = transfer_random_index + 1;
+                } else if (transfer_random_sequence[transfer_random_index] == 3){
+                    fractalA = fractal_tc;
+                    transfer_random_index = transfer_random_index + 1;
                 }
+
+                if(transfer_random_sequence[transfer_random_index] == 4){
+                    fractalA = fractal_ma;
+                    transfer_random_index = transfer_random_index + 1;
+                } else if (transfer_random_sequence[transfer_random_index] == 5){
+                    fractalA = fractal_mb;
+                    transfer_random_index = transfer_random_index + 1;
+                } else if (transfer_random_sequence[transfer_random_index] == 6){
+                    fractalA = fractal_mc;
+                    transfer_random_index = transfer_random_index + 1;
+                } 
             }
             fractal_pos, fractal_size = size_adjustment_two(psychoJS.window.size)
             var r_fractal_position = Math.random();
@@ -8367,12 +8373,10 @@ function decisionRoutineEnd() {
                 fractalA_R = gaussianRandom(70, 3);
                 fractalB_R = gaussianRandom(50, 3);
                 fractalC_R = gaussianRandom(20, 3);
-                console.log("first pair " + first_pair_index);
             } else {
                 fractalA_R = gaussianRandom(70, 3);
                 fractalB_R = gaussianRandom(20, 3);
                 fractalC_R = gaussianRandom(10, 3);
-                console.log("second pair " + second_pair_index);
             }
             if (((fa_click === 0) && (fb_click === 0) && (fc_click === 0))) {
                 sdm = true;
@@ -8407,7 +8411,6 @@ function decisionRoutineEnd() {
             if (sequence[trial_index] == 1) {
                 fractalA_R = gaussianRandom(70, 3);
                 fractalB_R = gaussianRandom(70, 3);
-                console.log("first pair " + first_pair_index);
             } else if (sequence[trial_index] == 0) {
                 fractalA_R = gaussianRandom(20, 3);
                 fractalB_R = gaussianRandom(20, 3);
@@ -8827,11 +8830,6 @@ var feedbackComponents;
 function feedbackRoutineBegin(snapshot) {
     return async function () {
         TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
-        if (sequence[trial_index] == 1) {
-            first_pair_index = first_pair_index + 1;
-        } else {
-            second_pair_index = second_pair_index + 1;
-        }
         trial_index = trial_index + 1;
         //------Prepare to start Routine 'feedback'-------
         t = 0;
