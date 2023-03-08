@@ -543,12 +543,12 @@ async function experimentInit() {
     // --------------------(: this part is changable :)--------------------
 
     // total trial number
-    learning_trial_num = 60;
+    learning_trial_num = 8;
     transfer_trial_num = 30;
 
 
     // same amount of pairs in n trials
-    learning_pair_sub_num = 6;
+    learning_pair_sub_num = 4;
     transfer_pair_sub_num = 6;
 
     // --------------------(: this part is changable :)--------------------
