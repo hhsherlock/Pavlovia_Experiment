@@ -576,8 +576,8 @@ async function experimentInit() {
         transfer_sequence = transfer_sequence.concat(temp);
     }
 
-    for (let i = 0; i < 2*transfer_trial_num/3; i++){
-        transfer_random_sequence = transfer_random_sequence.concat([Math.floor(Math.random()*3) + 1, Math.floor(Math.random()*3) + 4]);
+    for (let i = 0; i < 2 * transfer_trial_num / 3; i++) {
+        transfer_random_sequence = transfer_random_sequence.concat([Math.floor(Math.random() * 3) + 1, Math.floor(Math.random() * 3) + 4]);
     }
 
     // sequence = learning_sequence.concat(transfer_sequence);
@@ -7951,27 +7951,22 @@ function decisionRoutineBegin(snapshot) {
                 fractalA = fractal_tc;
                 fractalB = fractal_mb;
             } else {
-                if(transfer_random_sequence[transfer_random_index] == 1){
+                console.log(transfer_random_sequence[transfer_random_index])
+                if (transfer_random_sequence[transfer_random_index] == 1) {
                     fractalA = fractal_ta;
-                    transfer_random_index = transfer_random_index + 1;
-                } else if (transfer_random_sequence[transfer_random_index] == 2){
+                } else if (transfer_random_sequence[transfer_random_index] == 2) {
                     fractalA = fractal_tb;
-                    transfer_random_index = transfer_random_index + 1;
-                } else if (transfer_random_sequence[transfer_random_index] == 3){
+                } else if (transfer_random_sequence[transfer_random_index] == 3) {
                     fractalA = fractal_tc;
-                    transfer_random_index = transfer_random_index + 1;
                 }
 
-                if(transfer_random_sequence[transfer_random_index] == 4){
-                    fractalA = fractal_ma;
-                    transfer_random_index = transfer_random_index + 1;
-                } else if (transfer_random_sequence[transfer_random_index] == 5){
-                    fractalA = fractal_mb;
-                    transfer_random_index = transfer_random_index + 1;
-                } else if (transfer_random_sequence[transfer_random_index] == 6){
-                    fractalA = fractal_mc;
-                    transfer_random_index = transfer_random_index + 1;
-                } 
+                if (transfer_random_sequence[transfer_random_index + 1] == 4) {
+                    fractalB = fractal_ma;
+                } else if (transfer_random_sequence[transfer_random_index + 1] == 5) {
+                    fractalB = fractal_mb;
+                } else if (transfer_random_sequence[transfer_random_index + 1] == 6) {
+                    fractalB = fractal_mc;
+                }
             }
             fractal_pos, fractal_size = size_adjustment_two(psychoJS.window.size)
             var r_fractal_position = Math.random();
@@ -8831,6 +8826,10 @@ var feedbackComponents;
 function feedbackRoutineBegin(snapshot) {
     return async function () {
         TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
+        if (sequence[trial_index] == 2) {
+            console.log("this line runs");
+            transfer_random_index = transfer_random_index + 2;
+        }
         trial_index = trial_index + 1;
         //------Prepare to start Routine 'feedback'-------
         t = 0;
