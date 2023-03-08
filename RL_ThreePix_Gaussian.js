@@ -8830,7 +8830,6 @@ function feedbackRoutineBegin(snapshot) {
         if (sequence[trial_index] == 1) {
             first_pair_index = first_pair_index + 1;
         } else {
-            console.log("this line runs");
             second_pair_index = second_pair_index + 1;
         }
         trial_index = trial_index + 1;
