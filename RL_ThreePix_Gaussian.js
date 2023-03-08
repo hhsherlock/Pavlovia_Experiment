@@ -7889,6 +7889,7 @@ function decisionRoutineBegin(snapshot) {
 
         // learning phase with three fractals
         if (blocks_run === 0) {
+            console.log(was_last_time_slow);
             fa_click = 0;
             fb_click = 0;
             fc_click = 0;
