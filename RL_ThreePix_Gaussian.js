@@ -7944,6 +7944,7 @@ function decisionRoutineBegin(snapshot) {
             fractal_c_dec.setImage(fractalC);
             fractal_c_dec.setSize([fractal_size, fractal_size]);
         } else if (blocks_run === 1) {
+            console.log(was_last_time_slow);
             fa_click = 0;
             fb_click = 0;
             if (sequence[trial_index] === 1) {
