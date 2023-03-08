@@ -535,6 +535,7 @@ async function experimentInit() {
     practice_color_code_1 = [0.92157, 0.50980, 0.02745];
     practice_color_code_2 = [0.79216, 0.34510, 0.66667];
     trial_index = 0;
+    transfer_random_index = 0;
 
     // --------------------(: this part is changable :)--------------------
 
