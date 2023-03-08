@@ -8410,7 +8410,6 @@ function decisionRoutineEnd() {
             } else if (sequence[trial_index] == 0) {
                 fractalA_R = gaussianRandom(20, 3);
                 fractalB_R = gaussianRandom(20, 3);
-                console.log("second pair " + second_pair_index);
             } else if (sequence[trial_index] == 2) {
                 if (fractalA == 'pair1_A') {
                     fractalA_R = gaussianRandom(70, 3);
