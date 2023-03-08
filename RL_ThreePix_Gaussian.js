@@ -5634,11 +5634,11 @@ function decision_pracRoutineEnd() {
             misses = (misses + 1);
         } else {
             if (fa_click) {
-                outcome_a_train = gaussianRandom(50, 5);
+                outcome_a_train = gaussianRandom(50, 3);
             } else if (fb_click) {
-                outcome_b_train = gaussianRandom(50, 5);
+                outcome_b_train = gaussianRandom(50, 3);
             } else if (fc_click) {
-                outcome_c_train = gaussianRandom(50, 5);
+                outcome_c_train = gaussianRandom(50, 3);
             }
             if (fa_click) {
                 chosen_outcome_train = outcome_a_train;
@@ -8360,14 +8360,14 @@ function decisionRoutineEnd() {
         }
         if (blocks_run === 0) {
             if (sequence[trial_index] == 1) {
-                fractalA_R = gaussianRandom(70, 5);
-                fractalB_R = gaussianRandom(50, 5);
-                fractalC_R = gaussianRandom(20, 5);
+                fractalA_R = gaussianRandom(70, 3);
+                fractalB_R = gaussianRandom(50, 3);
+                fractalC_R = gaussianRandom(20, 3);
                 console.log("first pair " + first_pair_index);
             } else {
-                fractalA_R = gaussianRandom(70, 5);
-                fractalB_R = gaussianRandom(20, 5);
-                fractalC_R = gaussianRandom(10, 5);
+                fractalA_R = gaussianRandom(70, 3);
+                fractalB_R = gaussianRandom(20, 3);
+                fractalC_R = gaussianRandom(10, 3);
                 console.log("second pair " + second_pair_index);
             }
             if (((fa_click === 0) && (fb_click === 0) && (fc_click === 0))) {
@@ -8401,28 +8401,28 @@ function decisionRoutineEnd() {
             }
         } else {
             if (sequence[trial_index] == 1) {
-                fractalA_R = gaussianRandom(70, 5);
-                fractalB_R = gaussianRandom(70, 5);
+                fractalA_R = gaussianRandom(70, 3);
+                fractalB_R = gaussianRandom(70, 3);
                 console.log("first pair " + first_pair_index);
             } else if (sequence[trial_index] == 0) {
-                fractalA_R = gaussianRandom(20, 5);
-                fractalB_R = gaussianRandom(20, 5);
+                fractalA_R = gaussianRandom(20, 3);
+                fractalB_R = gaussianRandom(20, 3);
                 console.log("second pair " + second_pair_index);
             } else if (sequence[trial_index] == 2) {
                 if (fractalA == 'pair1_A') {
-                    fractalA_R = gaussianRandom(70, 5);
+                    fractalA_R = gaussianRandom(70, 3);
                 } else if (fractalA == 'pair1_B') {
-                    fractalA_R = gaussianRandom(50, 5);
+                    fractalA_R = gaussianRandom(50, 3);
                 } else if (fractalA == 'pair1_C') {
-                    fractalA_R = gaussianRandom(20, 5);
+                    fractalA_R = gaussianRandom(20, 3);
                 }
 
                 if (fractalB == 'pair2_C') {
-                    fractalB_R = gaussianRandom(70, 5);
+                    fractalB_R = gaussianRandom(70, 3);
                 } else if (fractalB == 'pair2_D') {
-                    fractalB_R = gaussianRandom(20, 5);
+                    fractalB_R = gaussianRandom(20, 3);
                 } else if (fractalB == 'pair2_E') {
-                    fractalB_R = gaussianRandom(10, 5);
+                    fractalB_R = gaussianRandom(10, 3);
                 }
             }
             if (((fa_click === 0) && (fb_click === 0))) {
