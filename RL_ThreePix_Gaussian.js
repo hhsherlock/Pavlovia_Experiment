@@ -7868,6 +7868,8 @@ var decisionComponents;
 var fractalA;
 var fractalB;
 var fractalC;
+var last_time_fractal_A;
+var last_time_fractal_B;
 function decisionRoutineBegin(snapshot) {
     return async function () {
         TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
