@@ -8419,11 +8419,11 @@ function decisionRoutineEnd() {
                     fractalA_R = gaussianRandom(20, 3);
                 }
 
-                if (fractalB == 'pair2_C') {
+                if (fractalB == 'pair2_D') {
                     fractalB_R = gaussianRandom(70, 3);
-                } else if (fractalB == 'pair2_D') {
-                    fractalB_R = gaussianRandom(20, 3);
                 } else if (fractalB == 'pair2_E') {
+                    fractalB_R = gaussianRandom(20, 3);
+                } else if (fractalB == 'pair2_F') {
                     fractalB_R = gaussianRandom(10, 3);
                 }
             }
