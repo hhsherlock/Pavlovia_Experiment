@@ -540,12 +540,12 @@ async function experimentInit() {
     // --------------------(: this part is changable :)--------------------
 
     // total trial number
-    learning_trial_num = 8;
+    learning_trial_num = 60;
     transfer_trial_num = 30;
 
 
     // same amount of pairs in n trials
-    learning_pair_sub_num = 4;
+    learning_pair_sub_num = 6;
     transfer_pair_sub_num = 6;
 
     // --------------------(: this part is changable :)--------------------
@@ -1672,7 +1672,7 @@ async function experimentInit() {
     hyf_intro = new visual.TextStim({
         win: psychoJS.window,
         name: 'hyf_intro',
-        text: 'Good job! Now the real experiment starts. Therefore we will use different symbols than in the training. One last note before we start: If you are uncertain which shape to pick, just go with your gut intuition. Over time you will learn which symbols are better than others. ',
+        text: 'Good job! Now the real experiment starts. Therefore we will use different symbols and backgournd elements than in the training. One last note before we start: If you are uncertain which shape to pick, just go with your gut intuition. Over time you will learn which symbols are better than others. ',
         font: font_style,
         units: undefined,
         pos: [0, 0], height: 1.0, wrapWidth: undefined, ori: 0.0,
