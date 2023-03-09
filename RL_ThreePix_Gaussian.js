@@ -5635,11 +5635,11 @@ function decision_pracRoutineEnd() {
             misses = (misses + 1);
         } else {
             if (fa_click) {
-                outcome_a_train = gaussianRandom(50, 3);
+                outcome_a_train = gaussianRandom(40, 3);
             } else if (fb_click) {
                 outcome_b_train = gaussianRandom(50, 3);
             } else if (fc_click) {
-                outcome_c_train = gaussianRandom(50, 3);
+                outcome_c_train = gaussianRandom(60, 3);
             }
             if (fa_click) {
                 chosen_outcome_train = outcome_a_train;
